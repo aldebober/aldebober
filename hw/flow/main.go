@@ -1,54 +1,86 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
+
+func init() {
+	fmt.Println("This is where initialization for my program occurs")
+}
 
 func main() {
-	//SEQUENCE
-	fmt.Println("this is the first statement to run")
-	fmt.Println("this is the second statement to run")
-	x := 40 // this is the third statement to run
-	y := 5  // this is the fourth statement to run
-	fmt.Printf(" x=%v \n y=%v\n", x, y)
 
-	// CONDITIONAL
-	// if statements
-	// switch statements
+	x := rand.Intn(250)
+	fmt.Println("var x is: ", x)
 
-	if x < 42 {
-		fmt.Println("Less than the meaning of life")
+	switch {
+	case x <= 100:
+		fmt.Println("x in 0 - 100")
+	case x > 100 && x <= 200:
+		fmt.Println("x in 101 - 200")
+	default:
+		fmt.Println("x in 201 - 250")
 	}
 
-	if x < 42 {
-		fmt.Println("Less than the meaning of life")
-	} else {
-		fmt.Println("equal to, or greater than, the meaning of life")
+	fmt.Println("-------------------")
+	x = rand.Intn(10)
+	y := rand.Intn(10)
+
+	fmt.Println("var x is: ", x)
+	fmt.Println("var y is: ", y)
+
+	switch {
+	case x < 4 && y < 4:
+		fmt.Println("x and y less 4")
+	case x > 6 && y > 6:
+		fmt.Println("x and y bigger 6")
+	case x >= 4 && x <= 6:
+		fmt.Println("x in 4 - 6")
+	case y != 5:
+		fmt.Println("y is not 5")
+	default:
+		fmt.Println("None")
 	}
 
-	if x < 42 {
-		fmt.Println("Less than the meaning of life")
-	} else if x == 42 {
-		fmt.Println("equal to the meaning of life")
-	} else {
-		fmt.Println("greater than the meaning of life")
+	fmt.Println("-------------------")
+
+	for i := 0; i <= 42; i++ {
+		x := rand.Intn(5)
+		fmt.Printf("x is %d\t %d\n", x, i)
 	}
 
-	/*
-		"If" statements specify the conditional execution of two branches
-		according to the value of a boolean expression. If the expression evaluates
-		to true, the "if" branch is executed, otherwise, if present, the "else" branch is executed.
-	*/
-	// https://go.dev/ref/spec#If_statements
+	fmt.Println("-------------------")
+	for x := 0; x < 21; x++ {
+		if x%2 != 0 {
 
-	/*
-		Comparison operators
-		Comparison operators compare two operands and yield an untyped boolean value.
+			continue
+		}
+		fmt.Println(x)
+	}
 
-		==    equal
-		!=    not equal
-		<     less
-		<=    less or equal
-		>     greater
-		>=    greater or equal
-	*/
-	// https://go.dev/ref/spec#Comparison_operators
+	fmt.Println("-------------------")
+	for i := 0; i < 5; i++ {
+		fmt.Printf("%d:\t", i)
+		for y := 0; y < 5; y++ {
+			fmt.Printf("%d\t", y)
+		}
+		fmt.Println()
+	}
+
+	fmt.Println("-------------------")
+	xi := []string{"😃", "🌴", "🌞", "🔆", "🌻", "🙌", "🌴", "🌴", "🌴", "🌴", "🌴", "🌴", "🌴", "🌴"}
+	for i, x := range xi {
+		fmt.Printf("%d:\t%s (%#v)\n", i, x, x)
+	}
+
+	fmt.Println("-------------------")
+	m := map[string]int{
+		"tony": 42,
+		"max":  31,
+	}
+	for i, x := range m {
+		fmt.Printf("%s, %d\n", i, x)
+	}
+	fmt.Println(m["tony"])
 }
