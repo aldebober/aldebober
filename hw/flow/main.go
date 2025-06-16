@@ -83,4 +83,15 @@ func main() {
 		fmt.Printf("%s, %d\n", i, x)
 	}
 	fmt.Println(m["tony"])
+	fmt.Println("-------------------")
+	xy := rand.Intn(100)
+	fmt.Println(xy)
+	switch {
+	case xy > 50:
+		fmt.Println("xy is more then 50")
+	case xy < 25:
+		fmt.Println("xy between 0-25")
+	default:
+		fmt.Println("Between 25-50")
+	}
 }
