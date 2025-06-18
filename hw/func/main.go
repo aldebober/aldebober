@@ -40,6 +40,7 @@ func main() {
 	buffer.Reset()
 
 	WriteString(file, "output to file")
+	WriteString(file, "\n--------------\n")
 	WriteString(buffer, "I'm buffer!")
 	fmt.Println(buffer.String())
 }
