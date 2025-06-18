@@ -15,10 +15,15 @@ func (c *Circle) Scale(factor float64) {
 	c.Radius *= factor
 }
 
+func (c *Circle) Area() float64 {
+	return c.Radius * c.Radius
+}
+
 func main() {
 	a := &Circle{Radius: 5}
 	a.Scale(25)
 	fmt.Println(a.Radius)
+	fmt.Println(a.Area())
 
 	file, err := os.Create("output.txt")
 	if err != nil {
