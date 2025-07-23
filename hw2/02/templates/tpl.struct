@@ -1,0 +1,5 @@
+my struct Template
+{{range .}}
+{{.Name}}: {{.Age}}
+{{end}}
+the end of template

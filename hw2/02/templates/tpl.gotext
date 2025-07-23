@@ -1,0 +1,6 @@
+
+My Template file
+{{range $index, $value := .}}
+my data {{$index}}: {{$value}}
+{{end}}
+the end of file
